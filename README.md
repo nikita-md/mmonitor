@@ -1,21 +1,22 @@
 # Mmonitor
 
-**TODO: Add description**
+# Follow instructions to setup elixir env
+https://elixir-lang.org/install.html#gnulinux
 
-## Installation
+# To setup deps
+mix local.hex --force
+mix local.rebar --force
+mix deps.get
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mmonitor` to your list of dependencies in `mix.exs`:
+# To build
+MIX_ENV=prod mix release
+# To start your system
+    _build/prod/rel/mmonitor/bin/mmonitor start
 
-```elixir
-def deps do
-  [
-    {:mmonitor, "~> 0.1.0"}
-  ]
-end
-```
+Once the release is running:
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mmonitor](https://hexdocs.pm/mmonitor).
+    # To connect to it remotely
+    _build/prod/rel/mmonitor/bin/mmonitor remote
 
+    # To stop it gracefully (you may also send SIGINT/SIGTERM)
+    _build/prod/rel/mmonitor/bin/mmonitor stop

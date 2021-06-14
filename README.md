@@ -11,7 +11,7 @@ mix deps.get
 # To build
 MIX_ENV=prod mix release
 # To start your system
-    _build/prod/rel/mmonitor/bin/mmonitor start
+    _build/prod/rel/mmonitor/bin/mmonitor daemon
 
 Once the release is running:
 

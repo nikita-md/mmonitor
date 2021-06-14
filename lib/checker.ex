@@ -43,7 +43,7 @@ defmodule Mmonitor.Checker do
   end
 
   defp hashrate_acceptable?(worker_info) do
-    worker_info["reportedHashrate"] > hashrate_limit()
+    worker_info["reportedHashrate"] > hashrate_limit() && worker_info["currentHashrate"] > hashrate_limit()
   end
 
   defp frequency do
